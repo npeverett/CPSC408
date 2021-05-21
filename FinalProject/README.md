@@ -12,7 +12,7 @@ library(shiny)
 * After the necessary packages are installed, run the following command to open the application
 
 ```r
-runGitHub("CPSC408", "<YOUR USER NAME>")
+runGitHub("CPSC408", "<YOUR USER NAME>", ref="main", subdir = "FinalProject")
 ```
 * If the previous command does not work try two of the following options
     * Running with my username "npeverett"

@@ -40,5 +40,9 @@ Enter the input that you would like in the form of a tuple without the parenthes
 * When creating a new record, the same issue with Observe can happen. Despite being able to properly insert a new record, the Observe function will run the query more than one time which means we will get a duplicate key error the second time it tries to run it even though you only click the button once. The status message may say "Failed to Create Record" however if the input was correct, be sure to check the data viewer tab to see if the record is there, because chances are it is. 
 * This can happen with update and delete as well, but the error seems to be less common in these operations
 
+#### Closing the Database Connection
+If you put any code after the `shinyApp(ui,server)` the application will break which means you will be opening many connections to the database given the application is bound to crash with the Observe bug at least once or twice. If you receive an error about too many instances open, please run the following command to clear the connections
+`lapply(dbListConnections(RMySQL::MySQL()), dbDisconnect)`. This is also commented at the bottom of the app.r file.
+
 ### Conclusion
 That is the information and known bugs regarding this application. If you have an error that was not listed here, or issues accessing the application or database itself, please send me an email so we can solve the problem. 

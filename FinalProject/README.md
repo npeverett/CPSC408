@@ -4,11 +4,23 @@
 
 ### How To Run Application
 * Open a session in RStudio or R terminal
-* Make sure you have installed the shiny library to R by using 
+* Make sure you have installed the library dependencies to R by using 
 ```r
-install.packages("shiny")
 library(shiny)
+library(shinydashboard)
+library(shinythemes)
+library(DT)
+library(dplyr)
+library(pool)
+library(DBI)
+library(stringr)
+library(ggplot2)
+library(RMySQL)
 ```
+
+There will be a popup button at the top to say install package, but if it does not pop up you can type
+`install.packages("<PACKAGE NAME>")`
+
 * After the necessary packages are installed, run the following command to open the application
 
 ```r
